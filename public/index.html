@@ -29,6 +29,7 @@
     <body>
         <h1>@iamtakagi/books</h1>
         <p>技術書の本棚</p>
+        <p>GitHub Repository: <a href="https://github.com/iamtakagi/books">こちら</a></p>
         <div
             id="grid"
             style="height: calc(100vh - 16px - 20em)"
@@ -40,7 +41,7 @@
                     {
                         headerName: "識別番号 (id)",
                         field: "id",
-                        width: 50,
+                        width: 100,
                         cellRenderer: (params) => {
                             const anchor = document.createElement("a");
                             anchor.href = `https://github.com/iamtakagi/books/blob/main/data.csv#L${
