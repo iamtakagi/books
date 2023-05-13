@@ -93,18 +93,6 @@
             new agGrid.Grid(document.getElementById("grid"), grid);
             const data = await fetch("data.json").then((res) => res.json());
             grid.api.setRowData(data);
-            grid.api.setFilterModel({
-                count: {
-                    filterType: "number",
-                    type: "greaterThan",
-                    filter: 1,
-                },
-                median_comment_count: {
-                    filterType: "number",
-                    type: "greaterThan",
-                    filter: 2,
-                },
-            });
         </script>
     </body>
 </html>
