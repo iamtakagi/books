@@ -2,7 +2,7 @@ id,title,price,author,supervisor,translator,href,isSold
 1,ゼロから作るDeep Learning ―Pythonで学ぶディープラーニングの理論と実装,"3,740円",斎藤 康毅,,,https://www.oreilly.co.jp/books/9784873117584/,true
 2,令和05年 イメージ＆クレバー方式でよくわかる 栢木先生の基本情報技術者教室,"1,848円",栢木厚,,,https://gihyo.jp/book/2022/978-4-297-13130-2,false
 3,プロを目指す人のためのTypeScript入門 安全なコードの書き方から高度な型の使い方まで,"3,278円",鈴木僚太,,,https://gihyo.jp/book/2022/978-4-297-12747-3,false
-4,初めてのPerl 第7版,3960円,Tom Phoenix,,近藤 嘉雪、嶋田 健志,https://www.oreilly.co.jp/books/9784873118246/,false
+4,初めてのPerl 第7版,"3,960円",Tom Phoenix,,近藤 嘉雪、嶋田 健志,https://www.oreilly.co.jp/books/9784873118246/,false
 5,良いコード/悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方,"3,278円",仙塲大也,,,https://gihyo.jp/book/2022/978-4-297-12783-1,false
 6,フロントエンド開発のためのセキュリティ入門 知らなかったでは済まされない脆弱性対策の必須知識,"2,970円",平野 昌士,はせがわ ようすけ、後藤 つぐみ,,https://www.shoeisha.co.jp/book/detail/9784798169477,false
 7,フロントエンド開発のためのテスト入門 今からでも知っておきたい自動テスト戦略の必須知識,"3,080円",吉井 健文,,,https://www.shoeisha.co.jp/book/detail/9784798178639,false
