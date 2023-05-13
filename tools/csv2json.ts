@@ -10,7 +10,7 @@ csv()
     .then((rows) => {
         rows = rows.map((row) => {
             row.id = new Number(row.id);
-            row.name = new String(row.name);
+            row.title = new String(row.title);
             row.link = new String(row.link);
             row.isSold = new Boolean(row.isSold);
             return row;

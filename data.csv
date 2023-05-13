@@ -1,4 +1,4 @@
-id,name,link,isSold
+id,title,link,isSold
 1,ゼロから作るDeep Learning ―Pythonで学ぶディープラーニングの理論と実装,https://www.oreilly.co.jp/books/9784873117584/,true
 2,令和05年 イメージ＆クレバー方式でよくわかる 栢木先生の基本情報技術者教室,https://gihyo.jp/book/2022/978-4-297-13130-2,false
 3,プロを目指す人のためのTypeScript入門 安全なコードの書き方から高度な型の使い方まで,https://gihyo.jp/book/2022/978-4-297-12747-3,false
