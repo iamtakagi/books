@@ -25,7 +25,7 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm install
-      - run: pnpm run lint:eslint --format json --output-file .eslint-report.json
+      - run: pnpm run lint:eslint --format json
       - name: Annotate ESLint results
         uses: ataylorme/eslint-annotate-action@v2
         if: failure()
