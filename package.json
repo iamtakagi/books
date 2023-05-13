@@ -7,10 +7,10 @@
     "csv2json": "node dist/csv2json.js",
     "dev": "pnpm build && pnpm csv2json && node dist/serve.js",
     "typecheck": "tsc --noEmit",
-    "prettier": "pnpm run lint:prettier --write",
+    "format": "pnpm run lint:prettier --write",
     "lint:eslint": "eslint . --ext \".js,.jsx,.ts,.tsx\"",
     "lint:prettier": "prettier --check \"**/*.{js,ts,tsx,css,json,yaml,md}\"",
-    "lintfix": "run-s 'lintfix:*' 'fmt'",
+    "lintfix": "run-s 'lintfix:*' 'format'",
     "lintfix:eslint": "pnpm run lint:eslint --fix"
   },
   "eslint": {
