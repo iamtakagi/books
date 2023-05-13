@@ -40,6 +40,7 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm csv2json
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
