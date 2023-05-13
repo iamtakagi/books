@@ -6,4 +6,21 @@ Managing purchased technical books.
 - おすすめの技術書があれば Issue 等で教えて下さい。
 
 ## 生データ
-https://raw.githubusercontent.com/iamtakagi/books/main/data.csv
+
+### CSV
+- https://raw.githubusercontent.com/iamtakagi/books/main/data.csv
+
+```javascript
+fetch('https://raw.githubusercontent.com/iamtakagi/books/main/data.csv')
+  .then((res) => res.text())
+  .then((data) => console.log(data));
+```
+
+### JSON
+- https://iamtakagi.github.io/books/data.json
+
+```javascript
+fetch('https://iamtakagi.github.io/books/data.json')
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+```
