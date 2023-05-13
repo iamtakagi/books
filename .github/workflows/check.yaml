@@ -1,0 +1,49 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  merge_group:
+    branches:
+      - main
+
+jobs:
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run lint:eslint --format json --output-file .eslint-report.json
+      - name: Annotate ESLint results
+        uses: ataylorme/eslint-annotate-action@v2
+        if: failure()
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          report-json: '.eslint-report.json'
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run lint:prettier
