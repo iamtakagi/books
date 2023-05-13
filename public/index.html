@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>@iamtakagi/books</title>
-  </head>
-  <body>
-    <p>200</p>
-  </body>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        console.log('200')
-    })
-  </script>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/ag-grid-community@28.0.2/dist/styles/ag-grid.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/ag-grid-community@28.0.2/dist/styles/ag-theme-balham.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@28.0.2/dist/ag-grid-community.min.noStyle.js"></script>
+        <style>
+            a {
+                color: #4365ff;
+            }
+            a.hover-link:hover {
+                position: fixed;
+                z-index: 99999999;
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid #aaa;
+                margin: -1px calc(-0.5em - 1px);
+                padding: 0 0.5em;
+            }
+        </style>
+        <title>技術書の本棚 | @iamtakagi/books</title>
+    </head>
+    <body>
+        <h1>@iamtakagi/books</h1>
+        <p>技術書の本棚</p>
+        <div
+            id="grid"
+            style="height: calc(100vh - 16px - 20em)"
+            class="ag-theme-balham"
+        ></div>
+        <script type="module">
+            const grid = {
+                columnDefs: [
+                    {
+                        headerName: "識別番号 (id)",
+                        field: "id",
+                        width: 100,
+                        cellRenderer: (params) => {
+                            const anchor = document.createElement("a");
+                            anchor.href = `https://github.com/iamtakagi/books/blob/main/data.csv#L${
+                                params.data.id + 1
+                            }`;
+                            anchor.textContent = params.data.id;
+                            anchor.title = params.data.id;
+                            anchor.classList.add("hover-link");
+                            anchor.target = "_blank";
+                            return anchor;
+                        },
+                    },
+                    {
+                        headerName: "書籍名 (title)",
+                        field: "title",
+                        width: 600,
+                        cellRenderer: (params) => {
+                            const anchor = document.createElement("a");
+                            anchor.href = params.data.href;
+                            anchor.textContent = params.data.title;
+                            anchor.title = params.data.title;
+                            anchor.classList.add("hover-link");
+                            anchor.target = "_blank";
+                            return anchor;
+                        },
+                    },
+                    {
+                        headerName: "売却済 (isSold)",
+                        field: "isSold",
+                        width: 300,
+                    },
+                ],
+                sortingOrder: ["desc", "asc", null],
+            };
+            new agGrid.Grid(document.getElementById("grid"), grid);
+            const data = await fetch("data.json").then((res) => res.json());
+            grid.api.setRowData(data);
+            grid.api.setFilterModel({
+                count: {
+                    filterType: "number",
+                    type: "greaterThan",
+                    filter: 1,
+                },
+                median_comment_count: {
+                    filterType: "number",
+                    type: "greaterThan",
+                    filter: 2,
+                },
+            });
+        </script>
+    </body>
 </html>
