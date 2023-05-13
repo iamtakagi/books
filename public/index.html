@@ -40,7 +40,7 @@
                     {
                         headerName: "識別番号 (id)",
                         field: "id",
-                        width: 100,
+                        width: 50,
                         cellRenderer: (params) => {
                             const anchor = document.createElement("a");
                             anchor.href = `https://github.com/iamtakagi/books/blob/main/data.csv#L${
@@ -70,22 +70,22 @@
                     {
                         headerName: "著者 (author)",
                         field: "author",
-                        width: 300,
+                        width: 250,
                     },
                     {
                         headerName: "監修 (supervisor)",
                         field: "supervisor",
-                        width: 300,
+                        width: 250,
                     },
                     {
                         headerName: "訳 (translator)",
                         field: "translator",
-                        width: 300,
+                        width: 250,
                     },
                     {
                         headerName: "売却済 (isSold)",
                         field: "isSold",
-                        width: 300,
+                        width: 250,
                     },
                 ],
                 sortingOrder: ["desc", "asc", null],
