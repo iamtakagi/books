@@ -1,2 +1,2 @@
 # books
-Technical books purchased.
+Managing purchased technical books.
