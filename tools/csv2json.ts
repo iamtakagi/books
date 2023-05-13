@@ -12,6 +12,9 @@ csv()
             row.id = new Number(row.id);
             row.title = new String(row.title);
             row.href = new String(row.href);
+            row.author = new String(row.author);
+            row.supervisor = new String(row.supervisor);
+            row.translator = new String(row.translator);
             row.isSold = row.isSold;
             return row;
         });
