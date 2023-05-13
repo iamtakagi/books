@@ -11,7 +11,7 @@ csv()
         rows = rows.map((row) => {
             row.id = new Number(row.id);
             row.title = new String(row.title);
-            row.link = new String(row.link);
+            row.href = new String(row.href);
             row.isSold = new Boolean(row.isSold);
             return row;
         });
