@@ -11,6 +11,7 @@ csv()
         rows = rows.map((row) => {
             row.id = new Number(row.id);
             row.title = new String(row.title);
+            row.price = new String(row.price);
             row.href = new String(row.href);
             row.author = new String(row.author);
             row.supervisor = new String(row.supervisor);
