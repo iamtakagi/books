@@ -5,12 +5,32 @@
   "scripts": {
     "build": "tsc --build",
     "csv2json": "node dist/csv2json.js",
-    "dev": "pnpm build && pnpm csv2json && node dist/serve.js"
+    "dev": "pnpm build && pnpm csv2json && node dist/serve.js",
+    "typecheck": "tsc --noEmit",
+    "prettier": "pnpm run lint:prettier --write",
+    "lint:eslint": "eslint . --ext \".js,.jsx,.ts,.tsx\"",
+    "lint:prettier": "prettier --check \"**/*.{js,ts,tsx,css,json,yaml,md}\"",
+    "lintfix": "run-s 'lintfix:*' 'fmt'",
+    "lintfix:eslint": "pnpm run lint:eslint --fix"
+  },
+  "eslint": {
+    "extends": [
+      "@iamtakagi"
+    ],
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    }
   },
   "devDependencies": {
+    "@iamtakagi/eslint-config": "^1.0.0",
+    "@iamtakagi/prettier-config": "^1.0.3",
     "@types/koa": "^2.13.6",
     "@types/koa-router": "^7.4.4",
     "@types/node": "^20.1.4",
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   },
   "dependencies": {
