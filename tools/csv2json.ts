@@ -12,7 +12,7 @@ csv()
             row.id = new Number(row.id);
             row.title = new String(row.title);
             row.href = new String(row.href);
-            row.isSold = new Boolean(row.isSold);
+            row.isSold = row.isSold;
             return row;
         });
         fs.writeFile(
